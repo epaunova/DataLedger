@@ -1,0 +1,68 @@
+{
+  "_comment": "DataLedger conformance test vectors v0.1",
+  "_spec_version": "0.1-draft",
+  "valid_manifests": [
+    {
+      "_description": "Minimal valid manifest with all required fields",
+      "manifest": {
+        "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        "version": "1.0.0",
+        "name": "Conformance Test Dataset",
+        "source_uri": "https://dataledger.dev/test/conformance-v1.0.0.tar.gz",
+        "licence": "CC-BY-4.0",
+        "content_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+        "created_at": "2026-04-01T12:00:00Z",
+        "publisher_key": "PLACEHOLDER_REPLACE_WITH_REAL_KEY_AFTER_KEYGEN",
+        "signature": "PLACEHOLDER_REPLACE_WITH_REAL_SIGNATURE_AFTER_KEYGEN"
+      },
+      "expected_result": "valid",
+      "note": "Replace publisher_key and signature with values from a real keygen run before publishing"
+    }
+  ],
+  "invalid_manifests": [
+    {
+      "_description": "Manifest with tampered name after signing",
+      "note": "Take a valid signed manifest and change the name field before verifying",
+      "expected_result": "invalid",
+      "expected_error": "signature verification failed"
+    },
+    {
+      "_description": "Manifest with missing required field: content_hash",
+      "manifest": {
+        "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        "version": "1.0.0",
+        "name": "Missing Hash Dataset",
+        "source_uri": "https://example.org/dataset.tar.gz",
+        "licence": "CC-BY-4.0",
+        "created_at": "2026-04-01T12:00:00Z",
+        "publisher_key": "PLACEHOLDER",
+        "signature": "PLACEHOLDER"
+      },
+      "expected_result": "invalid",
+      "expected_error": "missing required field: content_hash"
+    }
+  ],
+  "valid_attestations": [
+    {
+      "_description": "Minimal valid attestation",
+      "attestation": {
+        "run_id": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+        "model_id": "my-model-v1.0",
+        "started_at": "2026-04-01T08:00:00Z",
+        "completed_at": "2026-04-01T16:00:00Z",
+        "manifests_consumed": [
+          {
+            "manifest_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+            "version": "1.0.0",
+            "content_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+            "proportion": 1.0
+          }
+        ],
+        "pipeline_tool": "PyTorch 2.2.0",
+        "attestation_hash": "PLACEHOLDER_REPLACE_WITH_REAL_HASH"
+      },
+      "expected_result": "valid",
+      "note": "Replace attestation_hash with the SHA-256 of the RFC 8785 canonicalisation of this object with attestation_hash set to empty string"
+    }
+  ]
+}
