@@ -13,6 +13,10 @@ This repository contains:
 - `test-vectors/` — conformance test vectors
 - `docs/` — developer documentation
 
+## Status
+
+This project is under active development as part of an NGI Zero Commons Fund application (April 2026). The specification is at draft stage. No stable release exists yet.
+
 ## Design Goals
 
 DataLedger is designed to be minimal and composable. It defines two JSON formats and one verification algorithm. It does not require a centralised registry, a network service, or a blockchain. Any tool can implement the standard using only the specification and the test vectors.
@@ -32,5 +36,5 @@ Specification and documentation: CC-BY 4.0.
 
 ## Contact
 
-Eva Paunova 
+Eva Paunova — eva@dataledger.dev
 Codeberg: https://codeberg.org/dataledger/dataledger
