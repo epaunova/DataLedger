@@ -32,5 +32,5 @@ Specification and documentation: CC-BY 4.0.
 
 ## Contact
 
-Eva Paunova — eva@dataledger.dev
+Eva Paunova 
 Codeberg: https://codeberg.org/dataledger/dataledger
