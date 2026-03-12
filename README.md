@@ -2,7 +2,7 @@
 
 **Open Standard for Verifiable AI Training Data Provenance**
 
-DataLedger defines a cryptographic provenance standard for AI training datasets. A dataset publisher signs a manifest document with an ed25519 key. A training pipeline records which manifests it consumed. An auditor or regulator can verify the full chain without trusting any intermediary.
+DataLedger defines a cryptographic provenance standard for AI training datasets. A dataset publisher signs a manifest document with an ed25519 key. A training pipeline records which manifests it consumed. Any researcher, auditor, or downstream user can verify the full chain without trusting any intermediary.
 
 This repository contains:
 
